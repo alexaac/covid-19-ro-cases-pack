@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+    <head>
+
+        <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+        <meta content="utf-8" http-equiv="encoding">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>COVID-19 în România - Relațiile dintre cazuri</title>
+        <link rel="stylesheet" href="css/main.css">
+
+    </head>
+
+    <body>
+        <div class="wrapper">
+            <div class="side-pannel">
+                <div class="control control-group">
+                    <a id="toggle-legend" class="legend-icon" href="#" title="Legenda"></a>
+                </div>
+                <div class="control control-group">
+                    <a id="show-map-clusters" class="map-clusters-icon" href="#" title="Clustere pe hartă"></a>
+                    <a id="show-clusters" class="clusters-icon" href="#" title="Clustere"></a>
+                </div>
+                <div class="control control-group">
+                    <a id="zoom-in" class="zoom-in-icon" href="#" title="Zoom In"></a>
+                    <a id="zoom-out" class="zoom-out-icon" href="#" title="Zoom Out"></a>
+                    <a id="reset-zoom" class="zoom-reset-icon" href="#" title="Zoom la Hartă"></a>
+                </div>
+                <div class="control control-group">
+                    <a id="show-info" class="info-icon" href="#" title="Info"></a>
+                </div>
+                <div class="control control-group">
+                    <a id="switch-ro" class="ro-icon" href="https://alexaac.github.io/covid-19-ro-cases-pack/" title="Română"></a>
+                    <a id="switch-en" class="en-icon" href="https://alexaac.github.io/covid-19-ro-cases-pack/en" title="Engleză"></a>
+                </div>
+            </div>
+            <div id="spinner"></div>
+            <div id="chart" class="grabbable">
+                <div id="map-group"></div>
+                <div id="clusters-group"></div>
+            </div>
+            <div id="legend-div"></div>
+            <input type="hidden" id="language" name="language" value="ro">
+        </div>
+
+        <script src="js/d3.v5.min.js"></script>
+        <script src="https://d3js.org/topojson.v2.min.js"></script>
+        <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/spin.js/2.3.2/spin.min.js'></script>
+        <script src="https://unpkg.com/d3-force-attract@0.1.1/dist/d3-force-attract.js"></script>
+        
+        <script type="module" src="js/main.js"></script>
+
+    </body>
+
+</html>
