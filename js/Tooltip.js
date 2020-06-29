@@ -101,7 +101,7 @@ export const toggleInfo = (infoStatus, language) => {
         tooltip_div.transition()
             .duration(200)
             .style('opacity', .9);
-        tooltip_div.html(language === 'ro' ? '<strong>Clusterele de cazuri grupate pe județ</strong><br/><br/>Date de pe covid19.geo-spatial.org<br/>' : '<strong>Case clusters grouped by county</strong><br/><br/>Data from covid19.geo-spatial.org<br/>')
+        tooltip_div.html(language === 'ro' ? '<strong>Clusterele de cazuri grupate pe județ</strong><br/><br/>Date de pe covid19.geo-spatial.org.<br/>Dați click în afara cercului pentru a deselecta.' : '<strong>Case clusters grouped by county</strong><br/><br/>Data from covid19.geo-spatial.org.<br/>Click outside the circle to clear the selection.')
             .style('left', Config.width / 2 + 'px')
             .style('top', Config.height / 2 + 'px')
             .style('display', null);
