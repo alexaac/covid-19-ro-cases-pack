@@ -142,8 +142,7 @@ export default class PackChart {
             en_bubble_labels.append('text')
                 .text(d => d.value)
                 .attr('dy', '0.35em');
-            Layout.hideLabels(1)"
-            "
+            Layout.hideLabels(1);
 
             // Move the circles to their place
             viz.simulation.nodes(viz.geoCounties.map(d => d.force)).stop();
