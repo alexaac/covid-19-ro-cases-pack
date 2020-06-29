@@ -77,7 +77,7 @@ const drawGraph = () => {
             .attr('width', Config.svg_width)
             .attr('height', Config.svg_height)
             .attr('viewBox', '0, 0 ' + Config.width + ' ' + Config.height)
-            .on('click', () => { Tooltip.unHighlight(); Tooltip.hideTooltip(); });
+            .on('click', () => Tooltip.hideTooltip());
 
     // Append zoomable group
     svg.append('g')

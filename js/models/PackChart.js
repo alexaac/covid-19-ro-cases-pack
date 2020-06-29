@@ -135,7 +135,6 @@ export default class PackChart {
                 .attr('class', 'bubble')
                 .attr('r', d => d.r)
                 .on('touchmove mouseover', d => Tooltip.highlight(d))
-                .on('touchend mouseout', d => Tooltip.hideTooltip())
                 .attr('fill', d => d.parent && d.parent.id !== 'root' ? Layout.countyColor(d.parent.id) : '#E8E8E8');
             bubble_labels = viz.g.selectAll('.labels').data(viz.dataFiltered.leaves());
             en_bubble_labels = bubble_labels.enter().append('g').attr('class', 'labels');
@@ -143,7 +142,8 @@ export default class PackChart {
             en_bubble_labels.append('text')
                 .text(d => d.value)
                 .attr('dy', '0.35em');
-            Layout.hideLabels(1);
+            Layout.hideLabels(1)"
+            "
 
             // Move the circles to their place
             viz.simulation.nodes(viz.geoCounties.map(d => d.force)).stop();
