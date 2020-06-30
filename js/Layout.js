@@ -74,8 +74,6 @@ const zoomed = () => {
 
     let scale = d3.event.transform.k;
     if (scale > 0.8) {
-        zoomableGroup.selectAll('.node-labels > text')
-            .attr('transform', 'scale(' + (1 / scale) + ')');
         zoomableGroup.selectAll('.labels > text')
             .attr('transform', 'scale(' + (1 / scale) + ')');
     };
