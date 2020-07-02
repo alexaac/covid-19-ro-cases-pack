@@ -149,13 +149,22 @@ svg.chart-group a {
 	color: #0078A8;
 }
 
-.side-pannel {
-    position: absolute;
-    right: 0;
-    top: 0;
+.side-pannel-left, .side-pannel-right {
     z-index: 100;
     font-size: 12px;
     pointer-events: none;
+}
+
+.side-pannel-left {
+    position: absolute;
+    left: 10px;
+    top: 0;
+}
+
+.side-pannel-right {
+    position: absolute;
+    right: 10px;
+    top: 0;
 }
 
 .control {
@@ -176,8 +185,8 @@ svg.chart-group a {
 	background-repeat: no-repeat;
 	display: block;
 	height: 36px;
-	width: 50px;
-    line-height: 50px;
+	width: 36px;
+    line-height: 36px;
     background-size: contain;
     cursor: pointer;
 }
@@ -381,8 +390,8 @@ tooltip_div, .county-legend, .status-legend, .gender-legend, .age-legend, .contr
     }
 
     .control a {
-        width: 36px;
-        line-height: 36px;
+        width: 50px;
+        line-height: 50px;
     }
 
     .control #search-input {
