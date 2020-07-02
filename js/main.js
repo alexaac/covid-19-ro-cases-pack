@@ -38,10 +38,8 @@ Promise.all(promises).then( data => {
 
     setupGraph();
     drawGraph();
-    setTimeout(() => {
-        spinner.stop();
-        setActions();
-    }, 1000);
+    spinner.stop();
+    setActions();
 
 }).catch(
     error => console.log(error)
