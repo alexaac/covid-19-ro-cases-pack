@@ -81,8 +81,7 @@ const drawGraph = () => {
             .attr('preserveAspectRatio', 'xMinYMin')
             .attr('width', Config.svg_width)
             .attr('height', Config.svg_height)
-            .attr('viewBox', '0, 0 ' + Config.width + ' ' + Config.height)
-            .on('click', () => Tooltip.hideTooltip());
+            .attr('viewBox', '0, 0 ' + Config.width + ' ' + Config.height);
 
     // Append zoomable group
     svg.append('g')

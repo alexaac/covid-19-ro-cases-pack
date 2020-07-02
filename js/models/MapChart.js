@@ -1,4 +1,5 @@
 import * as Config from '../Config.js';
+import * as Tooltip from '../Tooltip.js';
 
 // MapChart Class
 export default class MapChart {
@@ -45,7 +46,8 @@ export default class MapChart {
                 .enter()
                 .append('path')
                 .attr('d', thisMapPath)
-                    .attr('class', 'land');
+                    .attr('class', 'land')
+                    .on('touchstart click', () => Tooltip.hideTooltip());
         
             mapFeatures.append('title').text(d => d.id);
         };

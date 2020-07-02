@@ -128,8 +128,8 @@ export default class PackChart {
                 .data(viz.dataFiltered.descendants())
                 .enter().append('g')
                 .each(function(d) { d.node = this; })
-                .on('mouseover', Tooltip.hovered(true))
-                .on('mouseout', Tooltip.hovered(false));
+                .on('touchstart mouseover', Tooltip.hovered(true))
+                .on('touchend mouseout', Tooltip.hovered(false));
             en_bubbles = bubbles.append('circle')
                 .attr('class', 'bubble')
                 .attr('r', d => d.r)
