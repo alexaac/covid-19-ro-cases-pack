@@ -73,7 +73,7 @@ const drawGraph = () => {
     svg = d3.select('#chart')
         .append('svg')
             .attr('class', 'chart-group')
-            .attr('preserveAspectRatio', 'xMidYMid')
+            .attr('preserveAspectRatio', 'xMinYMin')
             .attr('width', Config.svg_width)
             .attr('height', Config.svg_height)
             .attr('viewBox', '0, 0 ' + Config.width + ' ' + Config.height)

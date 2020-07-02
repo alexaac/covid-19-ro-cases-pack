@@ -34,7 +34,7 @@ h1 {
 }
 
 .wrapper {
-    margin: 0 20;
+    margin-top: 50px;
     margin-left: auto;
     margin-right: auto;
     overflow-y: auto;
@@ -378,20 +378,19 @@ tooltip_div, .county-legend, .status-legend, .gender-legend, .age-legend, .contr
 }
 
 /* Smaller devices */
-@media (max-width: 340px) {
+@media (max-width: 360px) {
     .slider {
         left: 0; top: 0; right: 70px;
     }
 
-    .side-pannel {
+    .side-pannel-left {
         top: 0;
-        height: 500px;
-        overflow-y: auto;
+        left: 0;
     }
 
-    .control a {
-        width: 50px;
-        line-height: 50px;
+    .side-pannel-right {
+        top: 0;
+        right: 0;
     }
 
     .control #search-input {
@@ -401,12 +400,21 @@ tooltip_div, .county-legend, .status-legend, .gender-legend, .age-legend, .contr
     .land {
         stroke-width: 1;
     }
+
+    .wrapper {
+        margin-top: 80px;
+    }
 }
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 550px) {
     .wrapper {
         width: 97%;
+    }
+
+    .control a {
+        width: 50px;
+        line-height: 50px;
     }
 }
 
