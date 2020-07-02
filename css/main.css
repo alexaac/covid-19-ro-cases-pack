@@ -388,6 +388,10 @@ tooltip_div, .county-legend, .status-legend, .gender-legend, .age-legend, .contr
     .control #search-input {
         width: 36px;
     }
+
+    .land {
+        stroke-width: 1;
+    }
 }
 
 /* Small devices (tablets, 768px and up) */
