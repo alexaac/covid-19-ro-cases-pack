@@ -1,5 +1,5 @@
 // set the dimensions and margins of the graph
-export const margin = { top: 100, left: 100, bottom: 50, right: 100 },
+export const margin = { top: 20, left: 20, bottom: 20, right: 20 },
     width = window.innerWidth - margin.left - margin.right,
     height = window.innerHeight - margin.top - margin.bottom,
     svg_width = width + margin.left + margin.right,
