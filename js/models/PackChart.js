@@ -52,10 +52,9 @@ export default class PackChart {
                 });
             }
         });
-        console.log(viz.graphNodes);
+
         let dict = {};
         viz.graphNodes.forEach(d => dict[d.name] = d);
-        console.log(dict);
 
         groupedByCountySource.forEach(key => {
             if (key.key !== 'undefined') {
