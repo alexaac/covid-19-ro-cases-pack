@@ -1,5 +1,5 @@
 // set the dimensions and margins of the graph
-export const margin = { top: 50, left: 20, bottom: 20, right: 20 },
+export const margin = { top: 20, left: 20, bottom: 20, right: 20 },
     width = window.innerWidth <= 360
     ? 600 - margin.left - margin.right
     : window.innerWidth <= 960

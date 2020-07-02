@@ -8,7 +8,6 @@ import PackChart from './models/PackChart.js';
 
 let graph = {nodes: [], links: []};
 let svg, casesData, geoData, layer, geoCounties, geojsonFeatures;
-let countiesCentroids = d3.map();
 
 let legendStatus = false, infoStatus = true, searchStatus = true;
 
@@ -20,6 +19,11 @@ let mapChart, packChart;
 
 (() => {
 
+    // Options for loading spinner
+let opts = {lines: 9, length: 4, width: 5, radius: 12, scale: 1, corners: 1, color: '#f40000', opacity: 0.25, rotate: 0, direction: 1, speed: 1, trail: 30, fps: 20, zIndex: 2e9, className: 'spinner', shadow: false, hwaccel: false, position: 'absolute'},
+    target = document.getElementById('spinner'),
+    spinner;
+
 // Load data
 const promises = [
     d3.json(countiesSource),
@@ -30,9 +34,14 @@ Promise.all(promises).then( data => {
     geoData = data[0];
     casesData = data[1];
 
+    spinner = new Spinner(opts).spin(target);
     setupGraph();
     drawGraph();
-    setTimeout(setActions(), 100);
+    setTimeout(() => {
+        spinner.stop();
+        setActions();
+    }, 1000);
+
 }).catch(
     error => console.log(error)
 );
@@ -48,15 +57,12 @@ const setupGraph = () => {
         geometries: geoData.objects[layer].geometries
     });
 
+    let fit = Config.projection.fitSize([Config.width, Config.height], geojsonFeatures);
+
     geoCounties.forEach( d => {
         let county = d.properties.county;
-        // Get lat, lon for nodes within county
-        countiesCentroids.set(county, {
-            lat: d.properties.lat,
-            lon: d.properties.lon,
-        });
         d.id = county;
-        d.centroid = Config.projection.fitSize([Config.width, Config.height], geojsonFeatures)([d.properties.lon, d.properties.lat]);
+        d.centroid = fit([d.properties.lon, d.properties.lat]);
         // Set force for group by county
         d.force = {};
         d.force.x = d.centroid[0];
